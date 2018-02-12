@@ -4,7 +4,9 @@
 
 Step By Step explanation for Python code
 
-Used Python libraries : Pandas (For data frame and calculations) and Sys (to get the arguments from command line)
+Used Python libraries
+  - Pandas: For data frame and calculations) and 
+  - Sys: To get the arguments from command line
 
 
 
