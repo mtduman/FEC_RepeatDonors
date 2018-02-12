@@ -28,13 +28,13 @@ For each recipient, zip code and calendar year, we will calculate these three va
 - Percentile(): Calculate the running percentile of contributions from repeat donors by using the nearest-rank method as described by Wikipedia
 
 ### Important details has been taken into consideration
-- The output file order has to be same as input file
+- The output file line order has to be in same order as the donation appear in the input file
 - When calculating 'OrdinalRank' field, we get value of zero (0) for some records at the beginning because of formula. Minimum value of OrdinalRank has to be one (1), and those values corrected
-- Although we don't have float value for TRANSACTION_AMT field in the samples, the FEC describes the TRANSACTION_AMT field as NUMBER(14,2) and shows those number without decimal point if they have value of zero in decimal place (.00). For the float value of '123456.00', they are showing as a '12345'. Those two details has taken into consideration 
+- Although we don't have float value for TRANSACTION_AMT field in the samples, the FEC describes the TRANSACTION_AMT field as NUMBER(14,2) and shows those number without decimal point if they have value of zero in the decimal place (.00). For the float value of '123456.00', they are showing as a '12345'. Those two details has taken into consideration 
 
 ## Step by Step Explanation
 
-### agg_txt() Function procedure:
+### 1. agg_txt() function
 - I read the text file and record only specific fields into pandas data frame      
 - On the FEC (Federal Election Commission) web site TRANSACTION_AMT defined as a NUMBER(14,2), so I used float type for this field
 - Data Cleaning
@@ -47,7 +47,7 @@ For each recipient, zip code and calendar year, we will calculate these three va
 
 
 
-## RepeatDon() Function procedure:
+## 2. RepeatDon() function
 - Get the current/active year info
 - Calculate the total donation number (allCONT) by grouping NAME and ZIP_CODE
 - Remove the records which has total donation number (allCONT) equal to one (1) or belongs to previous calendar year 
@@ -55,7 +55,7 @@ For each recipient, zip code and calendar year, we will calculate these three va
 - if a person made a donation in previous calendar years, total donation number (allCONT) has to be bigger than current year's total donation number (curYearCONT). So, we only keep the records by filtering for total donation number (allCONT) bigger than current year's total donation number
 - After filter, sort the records as it was beginning
 
-## Percentile() Function procedure:
+## 3. Percentile() function
 - Get the percentile value
 - Generate the total number of contributions from repeat donors (IND) in dataframe
 - Generate the current year info from TRANSACTION_DT
@@ -71,6 +71,4 @@ For each recipient, zip code and calendar year, we will calculate these three va
   - Sort the list and get the list's element which is equal to active records 'OrdinalRank' value
   - Set this element's value to the active records 'PercentileContrb' field
 
-## Print the fields to the output file in requested format
-
-
+## 4. Print the fields to the output file in requested format and same order as the donation appear in the input file
