@@ -11,8 +11,7 @@ Used Python libraries : Pandas (For data frame and calculations) and Sys (to get
 # agg_txt() Function procedure:
 - I read the text file and record only curtain columns      
 - On the FEC web site 'TRANSACTION_AMT' defined as a NUMBER(14,2), so I read as a float
-- Data Cleaning for following considerations:
---* Because we are only interested in individual contributions, we only want records that have the field,'OTHER_ID, set to empty.If the'OTHER_ID'field contains any other value, you should completely ignore and skip the entire record
+## Because we are only interested in individual contributions, we only want records that have the field,'OTHER_ID, set to empty.If the'OTHER_ID'field contains any other value, you should completely ignore and skip the entire record;
 --* If 'TRANSACTION_DT' is an invalid date (e.g., empty, malformed)
 --* If 'ZIP_CODE' is an invalid zip code (i.e., empty, fewer than five digits)
 --* If the 'NAME'is an invalid name (e.g., empty, malformed)
