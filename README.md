@@ -8,20 +8,20 @@ Used Python libraries : Pandas (For data frame and calculations) and Sys (to get
 
 
 
-agg_txt Function procedure:
+# agg_txt() Function procedure:
 - I read the text file and record only curtain columns      
 - On the FEC web site 'TRANSACTION_AMT' defined as a NUMBER(14,2), so I read as a float
 - Data Cleaning for following considerations:
----* Because we are only interested in individual contributions, we only want records that have the field,'OTHER_ID, set to empty. If the'OTHER_ID'field contains any other value, you should completely ignore and skip the entire record
----* If 'TRANSACTION_DT' is an invalid date (e.g., empty, malformed)
----* If 'ZIP_CODE' is an invalid zip code (i.e., empty, fewer than five digits)
----* If the 'NAME'is an invalid name (e.g., empty, malformed)
----* If any lines in the input file contains empty cells in the 'CMTE_ID' or 'TRANSACTION_AMT' fields	
+--- Because we are only interested in individual contributions, we only want records that have the field,'OTHER_ID, set to empty. If the'OTHER_ID'field contains any other value, you should completely ignore and skip the entire record
+--- If 'TRANSACTION_DT' is an invalid date (e.g., empty, malformed)
+--- If 'ZIP_CODE' is an invalid zip code (i.e., empty, fewer than five digits)
+--- If the 'NAME'is an invalid name (e.g., empty, malformed)
+--- If any lines in the input file contains empty cells in the 'CMTE_ID' or 'TRANSACTION_AMT' fields	
 - Keep donations records index on a column to use it end of the process
 
 
 
-RepeatDon Function procedure:
+# RepeatDon() Function procedure:
 - Get the active year info
 - Calculate the total donation number (allCONT) group by NAME and ZIP_CODE
 - Remove the records which has total donation number (allCONT) equal to one (1) and belongs to previous calendar year 
@@ -29,7 +29,7 @@ RepeatDon Function procedure:
 - if a person made a donation from previous calendar years,  total donation number (allCONT) has to be bigger than current year donation number (curYearCONT). So, we only keep the records by filtering for total donation number (allCONT) bigger than current year donation number
 - After filter, sort the data frame as a starting index and reset the index
 
-Percentile Function procedure:
+# Percentile() Function procedure:
 - Get the percentile value
 - Generate the total number of contributions from repeat donors (IND) in dataframe
 - Generate the current year info from  TRANSACTION_DT
