@@ -4,9 +4,7 @@
 
 Step By Step explanation for Python code
 
-Used Python libraries :
----Pandas : For data frame and calculations 
----Sys	 : to get the arguments from command line (Contribution, Percentile and Output text file path) 
+Used Python libraries : Pandas (For data frame and calculations) and Sys (to get the arguments from command line)
 
 
 
