@@ -20,7 +20,7 @@ Used Python libraries : Pandas (For data frame and calculations) and Sys (to get
 
 
 
-# RepeatDon() Function procedure:
+## RepeatDon() Function procedure:
 - Get the active year info
 - Calculate the total donation number (allCONT) group by NAME and ZIP_CODE
 - Remove the records which has total donation number (allCONT) equal to one (1) and belongs to previous calendar year 
@@ -28,7 +28,7 @@ Used Python libraries : Pandas (For data frame and calculations) and Sys (to get
 - if a person made a donation from previous calendar years,  total donation number (allCONT) has to be bigger than current year donation number (curYearCONT). So, we only keep the records by filtering for total donation number (allCONT) bigger than current year donation number
 - After filter, sort the data frame as a starting index and reset the index
 
-# Percentile() Function procedure:
+## Percentile() Function procedure:
 - Get the percentile value
 - Generate the total number of contributions from repeat donors (IND) in dataframe
 - Generate the current year info from  TRANSACTION_DT
@@ -44,5 +44,5 @@ Used Python libraries : Pandas (For data frame and calculations) and Sys (to get
 --- Sort the list and get the list's element which is equal to active records 'OrdinalRank' value
 --- Set this element's value to the active records 'PercentileContrb' field
 
-# Print the fields to the output file in requested format
+## Print the fields to the output file in requested format
 
