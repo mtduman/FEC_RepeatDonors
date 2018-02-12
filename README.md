@@ -1,18 +1,18 @@
 #  Individual campaign contributions for multiple years, determine which ones came from repeat donors
 
 
-Step By Step
-I am using two Python libraries :
-  pandas : For data frame and calculations 
-  Sys	 : to get the arguments  (Contribution, Percentile and Output text file detail) from command line
+
+Step By Step explanation for Python code
+
+Used Python libraries :
+  Pandas : For data frame and calculations 
+  Sys	 : to get the arguments from command line (Contribution, Percentile and Output text file path) 
 
 
 
-agg_txt procedure:
-      	I read the text file and record only curtain columns
-      
+agg_txt Function procedure:
+      	I read the text file and record only curtain columns      
 	On the FEC web site 'TRANSACTION_AMT' defined as a NUMBER(14,2), so I read as a float
-
 	Data Cleaning for following considerations:
 	* Because we are only interested in individual contributions, we only want records that have the field,'OTHER_ID, set to empty. If the'OTHER_ID'field contains any other value, you should completely ignore and skip the entire record
 	* If 'TRANSACTION_DT' is an invalid date (e.g., empty, malformed)
@@ -24,7 +24,7 @@ agg_txt procedure:
 
 
 
-RepeatDon procedure:
+RepeatDon Function procedure:
 	Get the active year info
 		
 	Calculate the total donation number (allCONT) group by NAME and ZIP_CODE
@@ -37,7 +37,7 @@ RepeatDon procedure:
 
 	After filter, sort the data frame as a starting index and reset the index
 
-Percentile procedure:
+Percentile Function procedure:
 	Get the percentile value
 	
    	Generate the total number of contributions from repeat donors (IND) in dataframe
