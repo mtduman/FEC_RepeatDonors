@@ -45,5 +45,5 @@ Used Python libraries : Pandas (For data frame and calculations) and Sys (to get
 --- Sort the list and get the list's element which is equal to active records 'OrdinalRank' value
 --- Set this element's value to the active records 'PercentileContrb' field
 
-- Print the 'CMTE_ID','ZIP_CODE','YEAR','PercentileContrb','TOT_CONTR','IND' to the output file in requested format
+# Print the fields to the output file in requested format
 
