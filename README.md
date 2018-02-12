@@ -1,4 +1,4 @@
-# List the Individual Repeat Donors for political campaign contributions
+#  Individual Repeat Donors list for political campaign contributions
 
 
 
