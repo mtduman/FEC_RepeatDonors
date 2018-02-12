@@ -1,4 +1,4 @@
-#  Challenge for listing the Individual Repeat Donors for political campaign contributions
+# List the Individual Repeat Donors for political campaign contributions
 
 
 
